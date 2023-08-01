@@ -15,3 +15,8 @@ update_properties() {
  # https://github.com/aosp-mirror/platform_packages_apps_settings/blob/f8ad32823c5709348a5fb9618166b07394e88d99/src/com/android/settings/development/DevelopmentSettings.java#L2857
  adb shell service call activity 1599295570
 }
+
+screenshot() {
+ adb exec-out screencap -p > screenshot.png
+ mv -f screenshot.png ~/Desktop/screenshot.png
+}
