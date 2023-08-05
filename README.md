@@ -1,1 +1,1 @@
-Sample of how to enable GPU/HWUI profiling via adb
+Simple bash wrapper for adb actions
