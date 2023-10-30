@@ -22,6 +22,17 @@ bounds() {
   fi
 }
 
+# Add to ~/.bash_profile or ~/.zshrc
+kill_process() {
+ adb shell am kill $package
+}
+
+# Sometimes regular kill_process does not work ¯\_(ツ)_/¯
+kill_process_2() {
+  adb shell "ps | grep ${package} | awk '{print $2}'" | xargs adb shell "run-as    ${package} kill"
+}
+
+
 screenshot() {
   adb exec-out screencap -p > ~/Desktop/screenshot.png
 }
